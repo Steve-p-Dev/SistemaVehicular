@@ -1,0 +1,663 @@
+/* Styles for splash screen */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.splash-screen {
+    text-align: center;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #ffffff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Styles for login */
+.login-container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+}
+
+.login-container h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333333;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666666;
+}
+
+.input-group input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.error-message {
+    color: red;
+    margin-top: 15px;
+}
+
+.bi-arrow-left {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Styles for vehicle registration */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-group button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #ffffff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 48%;
+}
+
+.button-group button:hover {
+    background-color: #0056b3;
+}
+
+.button-group button#clearButton {
+    background-color: #dc3545;
+}
+
+.button-group button#clearButton:hover {
+    background-color: #c82333;
+}
+
+.registration-container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+}
+
+.registration-container h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #424242;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #1e1c1c;
+}
+
+.input-group input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+/* Añadir este CSS para el mensaje de error del campo Año */
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+/* Estilos para el mapa */
+.map-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#map {
+    width: 100%;
+    height: 500px;
+}
+
+/* Estilos para el estado del vehículo */
+.vehicle-status {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.status-item {
+    display: inline-block;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+}
+
+.status-item:hover .status-check {
+    display: block;
+}
+
+.status-check {
+    display: none;
+    color: green;
+    font-size: 0.9em;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+/* Estilos para la alerta personalizada */
+.alert-box {
+    position: fixed;
+    top: 20px; /* Ajusta la distancia desde la parte superior */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4caf50; /* Verde para indicar éxito */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-align: center;
+    font-size: 1em;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Añadir una clase para mostrar la alerta */
+.alert-box.show {
+    opacity: 1;
+}
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Altura total de la pantalla */
+}
+
+/* Estilos generales para mapa.html */
+/* Estilos generales */
+.vehicle-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: -10px; /* Reducir el espacio entre los elementos */
+    text-align: center;
+    max-width: 40%; /* Reducir el ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.map-container {
+    text-align: center;
+    position: relative;
+}
+
+.map-container img {
+    max-width: 30%; /* Ajusta el tamaño máximo de la imagen */
+    height: auto;
+}
+
+#vehicleIcon {
+    font-size: 2em; /* Ajusta el tamaño del icono */
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Asegura que el icono esté debajo del mensaje */
+}
+
+.vehicle-info {
+    position: absolute;
+    top: calc(50% - 50px); /* Ajusta la posición del mensaje */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 2; /* Asegura que el mensaje esté sobre el icono */
+    display: none;
+}
+
+/* Estilos para el estado del vehículo */
+.vehicle-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 100%;
+    margin-top: -20px;
+    flex-direction: column; /* Cambiar a columna para colocar el mapa encima */
+}
+
+.vehicle-status h1 {
+    margin-bottom: 20px;
+}
+
+.img-status {
+    height: 50%;
+}
+
+.map-container {
+    position: relative; /* Relativo para contener el mapa */
+}
+
+.map-container img {
+    max-width: 100%; /* Ajuste de tamaño máximo para la imagen del mapa */
+    display: block; /* Asegurar que la imagen sea un bloque */
+    margin-bottom: 20px; /* Espacio abajo de la imagen */
+}
+
+.status-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Permitir el ajuste del contenido a dos líneas */
+}
+
+.status-item {
+    margin: 0 10px;
+    position: relative;
+    display: inline-block;
+}
+.status-item:nth-child(1){
+    top: -110px;
+    left: 70px;
+    border: none;
+    font-size: 10px;
+    color: transparent;
+}
+.status-item:nth-child(2){
+    top: -190px;
+    left: 100px;
+    border: none;
+    font-size: 10px;
+    color: transparent;
+}
+.status-item:nth-child(3){
+    top: -140px;
+    left: 10px;
+    border: none;
+    font-size: 10px;
+    color: transparent;
+}
+
+.status-check::before {
+    content: "✔ "; /* Icono de check */
+    font-size: 1.2em;
+    color: white;
+}
+
+.status-item:hover .status-check {
+    opacity: 1;
+    bottom: auto;
+    top: calc(100% + 5px); /* Mostrar arriba del status-item con un espacio de 5px */
+    left: 50%;
+    transform: translateX(-10%);
+    background-color: #4caf50; /* Fondo verde */
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    width: max-content; /* Ancho máximo según el contenido */
+    white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+    text-align: center; /* Alinear el texto al centro */
+}
+
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px; /* Espacio entre los botones y la flecha */
+}
+
+.button-container button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 0.8em; /* Ajustar el tamaño de la fuente */
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#panicButton {
+    background-color: #ffcccc;
+    color: #ff0000;
+}
+
+#panicButton:hover {
+    background-color: #ff9999;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+#lockButton {
+    background-color: #ccccff;
+    color: #0000ff;
+}
+
+#lockButton:hover {
+    background-color: #9999ff;
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+}
+
+#downArrow {
+    font-size: 1em; /* Tamaño de la flecha */
+    color: #666; /* Color de la flecha */
+    cursor: pointer;
+}
+
+#downArrow:hover {
+    color: #333; /* Color de la flecha al pasar el ratón */
+}
+
+@media (max-width: 390px) {
+    .button-container {
+        flex-direction: column; /* Alinear los botones en columna */
+        gap: 10px; /* Espacio entre los botones y la flecha */
+    }
+
+    .button-container button {
+        width: 50px; /* Ajustar el ancho */
+        height: 50px; /* Ajustar la altura */
+        border-radius: 50%; /* Mantener la forma circular */
+        font-size: 0.7em; /* Ajustar el tamaño de la fuente */
+    }
+
+    #downArrow {
+        font-size: 1em; /* Ajustar el tamaño de la flecha */
+    }
+}
+/* Estilos para las alertas */
+.custom-alert {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 20px; /* Ajusta la distancia desde la parte superior */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    font-size: 1.2em;
+    color: #333;
+    width: 80%; /* Ancho máximo */
+    max-width: 400px; /* Ancho máximo para mantener el diseño */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.custom-alert.show {
+    opacity: 1;
+}
+
+.custom-alert .close-btn {
+    background: none;
+    border: none;
+    font-size: 1.2em; /* Tamaño del botón de cierre */
+    margin-left: 10px;
+    cursor: pointer;
+    color: #333;
+    line-height: 1; /* Ajuste para alinear verticalmente */
+}
+
+/* Estilos para el icono del vehículo en peligro */
+#vehicleIcon {
+    font-size: 2em; /* Tamaño del icono */
+    color: rgb(69, 66, 66); /* Color rojo por defecto */
+    animation: pulse 1s infinite; /* Animación de pulsación */
+}
+
+/* Estilo para el estado del vehículo */
+.vehicle-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 100%;
+    margin-top: -20px; /* Ajuste de margen superior */
+    flex-direction: column; /* Cambiar a columna para colocar el mapa encima */
+}
+
+.vehicle-status h1 {
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+.img-status {
+    height: 50%; /* Altura de la imagen */
+    width: 70%;
+}
+
+.map-container {
+    position: relative; /* Relativo para contener el mapa */
+}
+
+.map-container img {
+    max-width: 100%; /* Ancho máximo de la imagen */
+    display: block; /* Mostrar como bloque */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+.status-container {
+    margin-top: 20px; /* Margen superior */
+    display: flex;
+    justify-content: space-around; /* Justificar alrededor */
+    flex-wrap: wrap; /* Envolver en caso de necesidad */
+}
+
+.status-item {
+    margin: 0 10px; /* Margen */
+    position: relative;
+    display: inline-block;
+}
+
+.status-check::before {
+    content: "✔ "; /* Icono de verificación */
+    font-size: 1.2em; /* Tamaño del icono */
+    color: white; /* Color blanco */
+}
+
+.button-container {
+    margin-top: -60px; /* Margen superior */
+    display: flex;
+    justify-content: center; /* Justificación */
+    align-items: center; /* Alineación de elementos */
+    width: 100%; /* Anchura */
+    gap: 10px; /* Espacio */
+}
+
+.button-container a {
+    font-size: 1.5em; /* Tamaño de fuente */
+    color: #666; /* Color */
+    cursor: pointer; /* Cursor */
+    text-decoration: none; /* Sin decoración */
+}
+
+.button-container a:hover {
+    color: #333; /* Color */
+}
+
+@media (max-width: 390px) {
+    .button-container {
+        flex-direction: column; /* Dirección de columna */
+        gap: 10px; /* Espacio */
+    }
+
+    .button-container a {
+        font-size: 1.2em; /* Tamaño de fuente */
+    }
+}
+
+/* Estilos para las alertas */
+.custom-alert {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Justificar entre */
+    position: fixed; /* Fijar posición */
+    top: 20px; /* Parte superior */
+    left: 50%; /* Izquierda */
+    transform: translateX(-50%); /* Transformar */
+    background-color: #f0f0f0; /* Color de fondo */
+    padding: 20px; /* Relleno */
+    border-radius: 10px; /* Radio del borde */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    z-index: 1000; /* Índice z */
+    font-size: 1.2em; /* Tamaño de fuente */
+    color: #333; /* Color */
+    width: 80%; /* Ancho */
+    max-width: 400px; /* Ancho máximo */
+    opacity: 0; /* Opacidad */
+    transition: opacity 0.5s ease-in-out; /* Transición */
+}
+
+.custom-alert.show {
+    opacity: 1; /* Opacidad */
+}
+
+.custom-alert .close-btn {
+    background: none; /* Fondo */
+    border: none; /* Sin borde */
+    font-size: 1.2em; /* Tamaño de fuente */
+    margin-left: 10px; /* Margen izquierdo */
+    cursor: pointer; /* Cursor */
+    color: #333; /* Color */
+    line-height: 1; /* Altura de línea */
+}
+
+.red-alert {
+    color: red !important; /* Color rojo */
+}
+/* Animación de pulsación */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+
+
+
+/* Para el texto parpadeante en rojo */
+@keyframes blink {
+    0% { color: red; }
+    50% { color: transparent; }
+    100% { color: red; }
+}
+
+.red-blink {
+    animation: blink 1s infinite;
+}
+
+/* Para la alerta en la parte superior derecha */
+.alert {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #f44336; /* Color rojo */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 1000;
+    display: none; /* Iniciar oculto */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
