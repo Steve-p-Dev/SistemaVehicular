@@ -165,6 +165,7 @@ button:hover {
     margin-top: 100px;
     padding: 30px;
 }
+
 #map {
     width: 100%;
     height: 500px;
@@ -197,13 +198,14 @@ button:hover {
     top: 10px;
     right: 10px;
 }
+
 /* Estilos para la alerta personalizada */
 .alert-box {
     position: fixed;
-    top: 20px; /* Ajusta la distancia desde la parte superior */
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #4caf50; /* Verde para indicar éxito */
+    background-color: #4caf50;
     color: white;
     padding: 15px;
     border-radius: 5px;
@@ -215,10 +217,10 @@ button:hover {
     transition: opacity 0.5s ease-in-out;
 }
 
-/* Añadir una clase para mostrar la alerta */
 .alert-box.show {
     opacity: 1;
 }
+
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
@@ -237,30 +239,29 @@ body {
 }
 
 /* Estilos generales para mapa.html */
-/* Estilos generales */
 .vehicle-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: -10px; /* Reducir el espacio entre los elementos */
+    gap: -10px;
     text-align: center;
-    max-width: 40%; /* Reducir el ancho máximo del contenedor */
-    margin: 0 auto; /* Centrar horizontalmente */
+    max-width: 40%;
+    margin: 0 auto;
 }
 
 #vehicleIcon {
-    font-size: 2em; /* Ajusta el tamaño del icono */
+    font-size: 2em;
     cursor: pointer;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1; /* Asegura que el icono esté debajo del mensaje */
+    z-index: 1;
 }
 
 .vehicle-info {
     position: absolute;
-    top: calc(50% - 50px); /* Ajusta la posición del mensaje */
+    top: calc(50% - 50px);
     left: 50%;
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, 0.75);
@@ -268,7 +269,7 @@ body {
     padding: 10px;
     border-radius: 5px;
     text-align: center;
-    z-index: 2; /* Asegura que el mensaje esté sobre el icono */
+    z-index: 2;
     display: none;
 }
 
@@ -280,7 +281,7 @@ body {
     text-align: center;
     max-width: 100%;
     margin-top: -20px;
-    flex-direction: column; /* Cambiar a columna para colocar el mapa encima */
+    flex-direction: column;
 }
 
 .vehicle-status h1 {
@@ -295,7 +296,7 @@ body {
     margin-top: 20px;
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap; /* Permitir el ajuste del contenido a dos líneas */
+    flex-wrap: wrap;
 }
 
 .status-item {
@@ -303,21 +304,24 @@ body {
     position: relative;
     display: inline-block;
 }
-.status-item:nth-child(1){
+
+.status-item:nth-child(1) {
     top: -110px;
     left: 70px;
     border: none;
     font-size: 10px;
     color: transparent;
 }
-.status-item:nth-child(2){
+
+.status-item:nth-child(2) {
     top: -190px;
     left: 100px;
     border: none;
     font-size: 10px;
     color: transparent;
 }
-.status-item:nth-child(3){
+
+.status-item:nth-child(3) {
     top: -140px;
     left: 10px;
     border: none;
@@ -326,7 +330,7 @@ body {
 }
 
 .status-check::before {
-    content: "✔ "; /* Icono de check */
+    content: "✔ ";
     font-size: 1.2em;
     color: white;
 }
@@ -334,16 +338,16 @@ body {
 .status-item:hover .status-check {
     opacity: 1;
     bottom: auto;
-    top: calc(100% + 5px); /* Mostrar arriba del status-item con un espacio de 5px */
+    top: calc(100% + 5px);
     left: 50%;
     transform: translateX(-10%);
-    background-color: #4caf50; /* Fondo verde */
+    background-color: #4caf50;
     color: white;
     border-radius: 10px;
     padding: 10px;
-    width: max-content; /* Ancho máximo según el contenido */
-    white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
-    text-align: center; /* Alinear el texto al centro */
+    width: max-content;
+    white-space: nowrap;
+    text-align: center;
 }
 
 .button-container {
@@ -352,14 +356,14 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap: 10px; /* Espacio entre los botones y la flecha */
+    gap: 10px;
 }
 
 .button-container button {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    font-size: 0.8em; /* Ajustar el tamaño de la fuente */
+    font-size: 0.8em;
     border: none;
     cursor: pointer;
     display: flex;
@@ -391,32 +395,59 @@ body {
 }
 
 #downArrow {
-    font-size: 1em; /* Tamaño de la flecha */
-    color: #666; /* Color de la flecha */
+    font-size: 1em;
+    color: #666;
     cursor: pointer;
 }
 
 #downArrow:hover {
-    color: #333; /* Color de la flecha al pasar el ratón */
+    color: #333;
 }
 
-@media (max-width: 390px) {
-    .button-container {
-        flex-direction: column; /* Alinear los botones en columna */
-        gap: 10px; /* Espacio entre los botones y la flecha */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .vehicle-container {
+        max-width: 80%;
+    }
+
+    .status-item {
+        padding: 10px;
     }
 
     .button-container button {
-        width: 50px; /* Ajustar el ancho */
-        height: 50px; /* Ajustar la altura */
-        border-radius: 50%; /* Mantener la forma circular */
-        font-size: 0.7em; /* Ajustar el tamaño de la fuente */
-    }
-
-    #downArrow {
-        font-size: 1em; /* Ajustar el tamaño de la flecha */
+        width: 50px;
+        height: 50px;
+        font-size: 0.7em;
     }
 }
+
+@media (max-width: 576px) {
+    .map-container {
+        padding: 10px;
+    }
+
+    .map-container img {
+        max-width: 100%;
+    }
+
+    .status-item {
+        margin: 0 5px;
+    }
+
+    .button-container {
+        margin-top: 10px;
+    }
+
+    .button-container button {
+        width: 40px;
+        height: 40px;
+        font-size: 0.6em;
+    }
+}
+
 /* Estilos para las alertas */
 .custom-alert {
     display: flex;
@@ -545,41 +576,42 @@ body {
 .custom-alert {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Justificar entre */
-    position: fixed; /* Fijar posición */
-    top: 20px; /* Parte superior */
-    left: 50%; /* Izquierda */
-    transform: translateX(-50%); /* Transformar */
-    background-color: #f0f0f0; /* Color de fondo */
-    padding: 20px; /* Relleno */
-    border-radius: 10px; /* Radio del borde */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
-    z-index: 1000; /* Índice z */
-    font-size: 1.2em; /* Tamaño de fuente */
-    color: #333; /* Color */
-    width: 80%; /* Ancho */
-    max-width: 400px; /* Ancho máximo */
-    opacity: 0; /* Opacidad */
-    transition: opacity 0.5s ease-in-out; /* Transición */
+    justify-content: space-between;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    font-size: 1.2em;
+    color: #333;
+    width: 80%;
+    max-width: 400px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .custom-alert.show {
-    opacity: 1; /* Opacidad */
+    opacity: 1;
 }
 
 .custom-alert .close-btn {
-    background: none; /* Fondo */
-    border: none; /* Sin borde */
-    font-size: 1.2em; /* Tamaño de fuente */
-    margin-left: 10px; /* Margen izquierdo */
-    cursor: pointer; /* Cursor */
-    color: #333; /* Color */
-    line-height: 1; /* Altura de línea */
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #333;
+    line-height: 1;
 }
 
 .red-alert {
-    color: red !important; /* Color rojo */
+    color: red !important;
 }
+
 /* Animación de pulsación */
 @keyframes pulse {
     0% {
@@ -593,16 +625,17 @@ body {
     }
 }
 
-
-
-
-
-
 /* Para el texto parpadeante en rojo */
 @keyframes blink {
-    0% { color: red; }
-    50% { color: transparent; }
-    100% { color: red; }
+    0% {
+        color: red;
+    }
+    50% {
+        color: transparent;
+    }
+    100% {
+        color: red;
+    }
 }
 
 .red-blink {
@@ -621,6 +654,25 @@ body {
     z-index: 1000;
     display: none; /* Iniciar oculto */
 }
+
+@media (max-width: 768px) {
+    .custom-alert {
+        width: 90%;
+        max-width: 90%;
+    }
+
+    .alert {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .custom-alert {
+        padding: 15px;
+        font-size: 1em;
+    }
+}
+
 
 
 
