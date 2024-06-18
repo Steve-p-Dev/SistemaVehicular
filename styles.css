@@ -232,7 +232,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Altura total de la pantalla */
+    padding: 20px;
 }
 
 /* Estilos generales para mapa.html */
