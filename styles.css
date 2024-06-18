@@ -162,7 +162,8 @@ button:hover {
 /* Estilos para el mapa */
 .map-container {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 100px;
+    padding: 30px;
 }
 #map {
     width: 100%;
@@ -247,16 +248,6 @@ body {
     margin: 0 auto; /* Centrar horizontalmente */
 }
 
-.map-container {
-    text-align: center;
-    position: relative;
-}
-
-.map-container img {
-    max-width: 20%; /* Ajusta el tamaño máximo de la imagen */
-    height: auto;
-}
-
 #vehicleIcon {
     font-size: 2em; /* Ajusta el tamaño del icono */
     cursor: pointer;
@@ -298,16 +289,6 @@ body {
 
 .img-status {
     height: 50%;
-}
-
-.map-container {
-    position: relative; /* Relativo para contener el mapa */
-}
-
-.map-container img {
-    max-width: 100%; /* Ajuste de tamaño máximo para la imagen del mapa */
-    display: block; /* Asegurar que la imagen sea un bloque */
-    margin-bottom: 20px; /* Espacio abajo de la imagen */
 }
 
 .status-container {
