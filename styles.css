@@ -328,6 +328,47 @@ body {
     font-size: 10px;
     color: transparent;
 }
+/* Responsive styles for medium screens (tablets) */
+@media (max-width: 768px) {
+    .status-item:nth-child(1) {
+        top: -90px;
+        left: 50px;
+        font-size: 9px;
+    }
+
+    .status-item:nth-child(2) {
+        top: -160px;
+        left: 80px;
+        font-size: 9px;
+    }
+
+    .status-item:nth-child(3) {
+        top: -120px;
+        left: 20px;
+        font-size: 9px;
+    }
+}
+
+/* Responsive styles for small screens (phones) */
+@media (max-width: 480px) {
+    .status-item:nth-child(1) {
+        top: -70px;
+        left: 50px;
+        font-size: 8px;
+    }
+
+    .status-item:nth-child(2) {
+        top: -120px;
+        left: 60px;
+        font-size: 8px;
+    }
+
+    .status-item:nth-child(3) {
+        top: -80px;
+        left: 10px;
+        font-size: 8px;
+    }
+}
 
 .status-check::before {
     content: "✔ ";
